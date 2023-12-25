@@ -73,6 +73,13 @@ type GeoIPInfo struct {
 		IsResidentialProxy           bool   `json:"is_residential_proxy,omitempty"`
 		IsSatelliteProvider          bool   `json:"is_satellite_provider,omitempty"`
 		IsTorExitNode                bool   `json:"is_tor_exit_node,omitempty"`
+		ISP                          string `json:"isp,omitempty"`
+		MobileCountryCode            string `json:"mobile_country_code,omitempty"`
+		MobileNetworkCode            string `json:"mobile_network_code,omitempty"`
+		Organization                 string `json:"organization,omitempty"`
+		StaticIPScore                int    `json:"static_ip_score,omitempty"`
+		UserCount                    int    `json:"user_count,omitempty"`
+		UserType                     string `json:"user_type,omitempty"`
 	} `json:"traits,omitempty"`
 	City struct {
 		GeonameID int `json:"geoname_id,omitempty"`
