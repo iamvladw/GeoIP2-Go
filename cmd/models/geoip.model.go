@@ -18,7 +18,6 @@ package models
 type GeoIPInfo struct {
 	Continent struct {
 		Code      string `json:"code,omitempty"`
-		GeonameID int    `json:"geoname_id,omitempty"`
 		Names     struct {
 			De   string `json:"de,omitempty"`
 			En   string `json:"en,omitempty"`
@@ -29,11 +28,10 @@ type GeoIPInfo struct {
 			Ru   string `json:"ru,omitempty"`
 			ZhCN string `json:"zh-CN,omitempty"`
 		} `json:"names,omitempty"`
+		GeonameID int    `json:"geoname_id,omitempty"`
 	} `json:"continent,omitempty"`
 	Country struct {
-		IsInEuropeanUnion bool   `json:"is_in_european_union,omitempty"`
 		IsoCode           string `json:"iso_code,omitempty"`
-		GeonameID         int    `json:"geoname_id,omitempty"`
 		Names             struct {
 			De   string `json:"de,omitempty"`
 			En   string `json:"en,omitempty"`
@@ -44,10 +42,11 @@ type GeoIPInfo struct {
 			Ru   string `json:"ru,omitempty"`
 			ZhCN string `json:"zh-CN,omitempty"`
 		} `json:"names,omitempty"`
+		GeonameID         int    `json:"geoname_id,omitempty"`
+		IsInEuropeanUnion bool   `json:"is_in_european_union,omitempty"`
 	} `json:"country,omitempty"`
 	RegisteredCountry struct {
 		IsoCode   string `json:"iso_code,omitempty"`
-		GeonameID int    `json:"geoname_id,omitempty"`
 		Names     struct {
 			De   string `json:"de,omitempty"`
 			En   string `json:"en,omitempty"`
@@ -58,7 +57,32 @@ type GeoIPInfo struct {
 			Ru   string `json:"ru,omitempty"`
 			ZhCN string `json:"zh-CN,omitempty"`
 		} `json:"names,omitempty"`
+		GeonameID int    `json:"geoname_id,omitempty"`
+		IsInEuropeanUnion bool   `json:"is_in_european_union,omitempty"`
 	} `json:"registered_country,omitempty"`
+	City struct {
+		IsoCode   string `json:"iso_code,omitempty"`
+		Names     struct {
+			De   string `json:"de,omitempty"`
+			En   string `json:"en,omitempty"`
+			Es   string `json:"es,omitempty"`
+			Fr   string `json:"fr,omitempty"`
+			Ja   string `json:"ja,omitempty"`
+			PtBR string `json:"pt-BR,omitempty"`
+			Ru   string `json:"ru,omitempty"`
+			ZhCN string `json:"zh-CN,omitempty"`
+		} `json:"names,omitempty"`
+		GeonameID int `json:"geoname_id,omitempty"`
+	} `json:"city,omitempty"`
+	Location struct {
+		AccuracyRadius int     `json:"accuracy_radius,omitempty"`
+		Latitude       float64 `json:"latitude,omitempty"`
+		Longitude      float64 `json:"longitude,omitempty"`
+		TimeZone       string  `json:"time_zone,omitempty"`
+	} `json:"location,omitempty"`
+	Postal struct {
+		Code string `json:"code,omitempty"`
+	} `json:"postal,omitempty"`
 	Traits struct {
 		AutonomousSystemNumber       int    `json:"autonomous_system_number,omitempty"`
 		AutonomousSystemOrganization string `json:"autonomous_system_organization,omitempty"`
@@ -81,28 +105,6 @@ type GeoIPInfo struct {
 		UserCount                    int    `json:"user_count,omitempty"`
 		UserType                     string `json:"user_type,omitempty"`
 	} `json:"traits,omitempty"`
-	City struct {
-		GeonameID int `json:"geoname_id,omitempty"`
-		Names     struct {
-			De   string `json:"de,omitempty"`
-			En   string `json:"en,omitempty"`
-			Es   string `json:"es,omitempty"`
-			Fr   string `json:"fr,omitempty"`
-			Ja   string `json:"ja,omitempty"`
-			PtBR string `json:"pt-BR,omitempty"`
-			Ru   string `json:"ru,omitempty"`
-			ZhCN string `json:"zh-CN,omitempty"`
-		} `json:"names,omitempty"`
-	} `json:"city,omitempty"`
-	Location struct {
-		AccuracyRadius int     `json:"accuracy_radius,omitempty"`
-		Latitude       float64 `json:"latitude,omitempty"`
-		Longitude      float64 `json:"longitude,omitempty"`
-		TimeZone       string  `json:"time_zone,omitempty"`
-	} `json:"location,omitempty"`
-	Postal struct {
-		Code string `json:"code,omitempty"`
-	} `json:"postal,omitempty"`
 	Subdivisions []struct {
 		IsoCode   string `json:"iso_code,omitempty"`
 		GeonameID int    `json:"geoname_id,omitempty"`
